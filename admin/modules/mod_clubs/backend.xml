@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<backend>    
+    <module>
+        <id>mod_clubs</id>
+        <title>Клубы пользователей</title>
+    </module>
+    <params>
+        <param type="number" name="count" title="Количество клубов" units="шт." default="5" />
+		<param type="list" name="type" title="Сортировка списка" default="id">
+			<option title="По дате" value="id" />
+			<option title="По рейтингу" value="rating" />
+			<option title="По количеству участников" value="members_count" />
+		</param>
+		<param type="flag" name="vip_on_top" title="VIP клубы вверху списка" default="on" />
+    </params>
+</backend>

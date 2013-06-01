@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<backend>    
+    <module>
+        <id>mod_category</id>
+        <title>Разделы сайта</title>
+    </module>
+    <params>
+        <param type="list_db" name="category_id" title="Родительский раздел" src="cms_category" src_title="title" src_value="id" src_where="published='1' AND NSLevel>0" tree="1" >
+			<option title="Все разделы" value="0" />
+		</param>
+		<param type="flag" name="show_subcats" title="Показывать подкатегории" default="on" />
+		<param type="flag" name="expand_all" title="Развернуть все категории" default="off" />
+    </params>
+</backend>

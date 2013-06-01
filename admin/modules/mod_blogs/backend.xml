@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<backend>
+    <module>
+        <id>mod_blogs</id>
+        <title>Записи в блогах</title>
+    </module>
+    <params>
+
+        <param type="list" name="sort" title="Сортировка вывода">
+            <option title="Лучшие по рейтингу" value="rating" />
+            <option title="Самые комментируемые" value="comments_count" />
+			<option title="Последние добавленные" value="pubdate" />
+        </param>
+
+        <param type="list" name="owner" title="Какие блоги показывать">
+            <option title="Блоги пользователей" value="user" />
+            <option title="Блоги клубов" value="club" />
+        </param>
+
+        <param type="list_db" name="blog_id" title="Посты из блога" src="cms_blogs" src_title="title" src_value="id" >
+			<option title="Все блоги" value="0" />
+		</param>
+
+        <param type="number" name="shownum" title="Количество новых записей" units="шт." default="5" />
+
+        <param type="number" name="minrate" title="Ограничение по рейтингу" default="5" hint="Показывать записи с рейтингом выше указанного" />
+
+        <param type="flag" name="showrss" title="Показывать ссылку на RSS" default="on" />
+
+    </params>
+</backend>

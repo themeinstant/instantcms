@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<backend>
+    <module>
+        <id>mod_photo</id>
+        <title>Фотографии</title>
+    </module>
+    <params>
+        <param type="number" name="shownum" title="Количество фотографий" units="шт." default="5" />
+        <param type="number" name="maxcols" title="Число колонок для вывода" units="шт." default="5" />
+        <param type="flag" name="showclubs" title="Показывать фотографии из клубов" default="off" />
+        <param type="list_db" name="album_id" title="Фотографии из альбома" src="cms_photo_albums" src_title="title" src_value="id" src_where="NSLevel>0" tree="1">
+            <option title="-- Все альбомы --" value="0" />
+        </param>
+		<param type="flag" name="is_subs" title="Вместе с подальбомами" default="off" />
+        <param type="list" name="sort" title="Какие фото показывать">
+            <option title="Лучшие по рейтингу" value="rating" />
+            <option title="Самые просматриваемые" value="hits" />
+			<option title="Последние добавленные" value="pubdate" />
+        </param>
+        <param type="list" name="whatphoto" title="Период">
+            <option title="Все" value="all" />
+            <option title="За день" value="today" />
+			<option title="За неделю" value="week" />
+			<option title="За месяц" value="month" />
+        </param>
+		<param type="flag" name="is_full" title="Подробный вывод фото" default="off" />
+        <param type="flag" name="showmore" title="Показывать ссылку на галерею" default="on" />
+    </params>
+</backend>
